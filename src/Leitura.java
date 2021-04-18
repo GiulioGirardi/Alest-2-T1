@@ -35,7 +35,7 @@ public class Leitura {
             System.err.format("Erro na leitura do arquivo: ", e);
         }
 
-        ArrayList linhaNumero = new ArrayList();
+        ArrayList<String> linhaNumero = new ArrayList<String>();
         String aux[];
         for (int i = 0; i < numLinhas; i++) {
             aux = linhas[i].split(" ");

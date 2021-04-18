@@ -1,28 +1,19 @@
-
+import java.io.IOException;
+import java.util.ArrayList;
 public class Main
 {
-    public static void main(String args[])
+    public static void main(String args[]) throws IOException
     {
+        ArrayList<String> lista = new ArrayList<>();
         Heap heap = new Heap();
         Leitura leitura = new Leitura();
-        heap.start();
-
-        heap.insert("X0");
-        heap.insert("X1");
-        heap.insert("X2");
-        heap.insert("X3");
-        heap.insert("X4");
-        heap.insert("X5");
-        heap.insert("X6");
-        heap.insert("6");
-        heap.insert("7");
-        heap.insert("8");
-        heap.insert("8");
-        heap.insert("7");
-        heap.insert("7");
-        heap.insert("7");
-        heap.insert("8");
         
+        heap.start();
+        lista = leitura.LeituraArquivo();
+
+        for (int i = 0; i < lista.size(); i++) {
+            heap.insert(lista.get(i));
+        }
 
         heap.verify();
 
