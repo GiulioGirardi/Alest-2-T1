@@ -3,16 +3,17 @@ import java.util.ArrayList;
 public class Heap{
 
     ArrayList<String> heap = new ArrayList<String>();
-    int lenght = 0;
+ 
 
     void start()
     {
         heap.add("");
-        lenght++ ;
+       
     }
     void insert(String s)
     {
         heap.add(s);
+        
     }
 
     void verify()
