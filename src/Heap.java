@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Heap{
 
     ArrayList<String> heap = new ArrayList<String>();
- 
+    static int count = 0;
 
     void start()
     {
@@ -23,6 +23,7 @@ public class Heap{
 
     private static void buscaEq(ArrayList<String> heap ,int index)
     {
+        
     
         int valor1 = 0;
         int valor2 = 0;
@@ -43,7 +44,7 @@ public class Heap{
             {
                 if(heap.get((index*2) + 1).indexOf("X") == -1)
                 {
-                    valor1 = Integer.parseInt(heap.get((index*2) + 1));
+                    valor2 = Integer.parseInt(heap.get((index*2) + 1));
                 }
                 else 
                 {
@@ -55,6 +56,7 @@ public class Heap{
             {
                 if(valor1 == valor2)
                 {
+                    count++;
                     System.out.println("O nodo "+ heap.get(index) + " é equilibrado");
                 }
                 else
@@ -63,5 +65,12 @@ public class Heap{
                 }
             }
     }
+
+    int getCount()
+    {
+        return count;
+    }
+
+    
 
 }
