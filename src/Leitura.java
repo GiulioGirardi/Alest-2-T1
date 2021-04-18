@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class Leitura {
     ArrayList listaNumeros;
 
-    Leitura(){
+    Leitura() {
         listaNumeros = new ArrayList();
     }
 
@@ -21,8 +21,8 @@ public class Leitura {
         int numLinhas = 0;
 
         //TODO: Alterar nome do arquivo que será lido
-        
-        Path filePath = Paths.get("v8.txt");
+
+        Path filePath = Paths.get("teste5.txt");
 
         // Ler o arquivo
         try (BufferedReader reader = Files.newBufferedReader(filePath, Charset.defaultCharset())) {
@@ -36,10 +36,21 @@ public class Leitura {
         }
 
         ArrayList linhaNumero = new ArrayList();
-
+        String aux[];
         for (int i = 0; i < numLinhas; i++) {
-            linhas[i].split("\n");
-            linhaNumero.add(linhas[i]);
+            aux = linhas[i].split(" ");
+            for (int j = 0; j < aux.length; j++) {
+
+                if (linhaNumero.contains(aux[j])) {
+                    if (aux[j].indexOf("X") == -1) {
+                        linhaNumero.add(aux[j]);
+                    }
+                    continue;
+                } else {
+                    linhaNumero.add(aux[j]);
+                }
+            }
+
         }
 
         return linhaNumero;
